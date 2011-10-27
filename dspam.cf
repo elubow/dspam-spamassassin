@@ -1,0 +1,131 @@
+use_dspam	1
+ignore_dspam_wl 0
+add_header all DSPAM-Result _DSPAMRESULT_
+
+#
+## HAM Scores
+#
+
+header DSPAM_HAM_00 X-Spam-DSPAM-Result =~ /DSPAM_HAM_00/
+score DSPAM_HAM_00 -0.01
+describe DSPAM_HAM_00 < 10% chance of message being HAM
+
+header DSPAM_HAM_05 X-Spam-DSPAM-Result =~ /DSPAM_HAM_05/
+score DSPAM_HAM_05 -0.10
+describe DSPAM_HAM_05 < 05% chance of message being HAM
+
+header DSPAM_HAM_10 X-Spam-DSPAM-Result =~ /DSPAM_HAM_10/
+score DSPAM_HAM_10 -0.15
+describe DSPAM_HAM_10 10% chance of message being HAM
+
+header DSPAM_HAM_20 X-Spam-DSPAM-Result =~ /DSPAM_HAM_20/
+score DSPAM_HAM_20 -0.35
+describe DSPAM_HAM_20 20% chance of message being HAM
+
+header DSPAM_HAM_30 X-Spam-DSPAM-Result =~ /DSPAM_HAM_30/
+score DSPAM_HAM_30 -0.65
+describe DSPAM_HAM_30 30% chance of message being HAM
+
+header DSPAM_HAM_40 X-Spam-DSPAM-Result =~ /DSPAM_HAM_40/
+score DSPAM_HAM_40 -0.85
+describe DSPAM_HAM_40 40% chance of message being HAM
+
+header DSPAM_HAM_50 X-Spam-DSPAM-Result =~ /DSPAM_HAM_50/
+score DSPAM_HAM_50 -1.05
+describe DSPAM_HAM_50 50% chance of message being HAM
+
+header DSPAM_HAM_60 X-Spam-DSPAM-Result =~ /DSPAM_HAM_60/
+score DSPAM_HAM_60 -1.35
+describe DSPAM_HAM_60 60% chance of message being HAM
+
+header DSPAM_HAM_70 X-Spam-DSPAM-Result =~ /DSPAM_HAM_70/
+score DSPAM_HAM_70 -1.75
+describe DSPAM_HAM_70 70% chance of message being HAM
+
+header DSPAM_HAM_80 X-Spam-DSPAM-Result =~ /DSPAM_HAM_80/
+score DSPAM_HAM_80 -2.25
+describe DSPAM_HAM_80 80% chance of message being HAM
+
+header DSPAM_HAM_90 X-Spam-DSPAM-Result =~ /DSPAM_HAM_90/
+score DSPAM_HAM_90 -2.65
+describe DSPAM_HAM_90 90% chance of message being HAM
+
+header DSPAM_HAM_95 X-Spam-DSPAM-Result =~ /DSPAM_HAM_95/
+score DSPAM_HAM_95 -2.87
+describe DSPAM_HAM_95 95% chance of message being HAM
+
+header DSPAM_HAM_99 X-Spam-DSPAM-Result =~ /DSPAM_HAM_99/
+score DSPAM_HAM_99 -3.23
+describe DSPAM_HAM_99 99% chance of message being HAM
+
+#
+## Spam Scores
+#
+
+header DSPAM_SPAM_00 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_00/
+score DSPAM_SPAM_00 0.10
+describe DSPAM_SPAM_00 < 10% chance of message being SPAM
+
+header DSPAM_SPAM_05 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_05/
+score DSPAM_SPAM_05 0.25
+describe DSPAM_SPAM_05 < 05% chance of message being SPAM
+
+header DSPAM_SPAM_10 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_10/
+score DSPAM_SPAM_10 0.45
+describe DSPAM_SPAM_10 10% chance of message being SPAM
+
+header DSPAM_SPAM_20 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_20/
+score DSPAM_SPAM_20 0.85
+describe DSPAM_SPAM_20 20% chance of message being SPAM
+
+header DSPAM_SPAM_30 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_30/
+score DSPAM_SPAM_30 1.15
+describe DSPAM_SPAM_30 30% chance of message being SPAM
+
+header DSPAM_SPAM_40 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_40/
+score DSPAM_SPAM_40 1.55
+describe DSPAM_SPAM_40 40% chance of message being SPAM
+
+header DSPAM_SPAM_50 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_50/
+score DSPAM_SPAM_50 1.85
+describe DSPAM_SPAM_50 50% chance of message being SPAM
+
+header DSPAM_SPAM_60 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_60/
+score DSPAM_SPAM_60 2.25
+describe DSPAM_SPAM_60 60% chance of message being SPAM
+
+header DSPAM_SPAM_70 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_70/
+score DSPAM_SPAM_70 2.65
+describe DSPAM_SPAM_70 70% chance of message being SPAM
+
+header DSPAM_SPAM_80 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_80/
+score DSPAM_SPAM_80 2.95
+describe DSPAM_SPAM_80 80% chance of message being SPAM
+
+header DSPAM_SPAM_90 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_90/
+score DSPAM_SPAM_90 3.37
+describe DSPAM_SPAM_90 90% chance of message being SPAM
+
+header DSPAM_SPAM_95 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_95/
+score DSPAM_SPAM_95 3.65
+describe DSPAM_SPAM_95 95% chance of message being SPAM
+
+header DSPAM_SPAM_99 X-Spam-DSPAM-Result =~ /DSPAM_SPAM_99/
+score DSPAM_SPAM_99 3.98
+describe DSPAM_SPAM_99 99% chance of message being SPAM
+
+#
+## Other Scores
+#
+
+header DSPAM_AWL X-Spam-DSPAM-Result =~ /DSPAM_AWL/
+score DSPAM_AWL -1.05
+describe DSPAM_AWL dspam auto-whitelisted message
+
+header DSPAM_ERROR X-Spam-DSPAM-Result =~ /DSPAM_ERROR/
+score DSPAM_ERROR 0.100
+describe DSPAM_ERROR Potential forgery of dspam headers
+
+header DSPAM_NOSCORE X-Spam-DSPAM-Result =~ /DSPAM_NOSCORE/
+score DSPAM_NOSCORE 0.001
+describe DSPAM_NOSCORE Placefiller match for the plugin
