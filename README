@@ -1,0 +1,13 @@
+When using dspam in conjuction with SpamAssassin and amavisd-new, amavisd-new automatically has dspam calculate the probabability of a message being HAM/SPAM and then insert headers. If you have SA installed, the dspam information goes to waste. That is unless you take advantage of this plugin. Using dspam’s results, this module adds a tag/token to the message that SA picks up and based on the score you assign it in the ruleset configuration file, it adds/subtracts that score.
+
+To use this module, put the perl module in /usr/share/perl5/Mail/SpamAssassin/Plugin/ (or wherever your SA Plugin dir is). Put the config file (dspam.cf) with the rest of the SpamAssassin config files (usually located in /etc/spamassassin). First, edit the local.cf file and add the following line anywhere in the file:
+
+    include dspam.cf
+
+Next, edit the init.pre file and add the following line anywhere near the other lodplugin lines (Note: This should be the Perl @INC path to the location that you put your dspam.pm plugin):
+
+   loadplugin Mail::SpamAssassin::Plugin::dspam
+
+Then edit the dspam.cf and put your desired values for each of the hits. Start low to see how the response is and watch your logs closely.
+
+I have also found it handy to create METAs that where SA reads a message as BAYES_99 and dspam reads a message as DSPAM_SPAM_99 add a substantial amount of points. The same goes for the reverse, if SA reads a message at BAYES_00 and dspam reads that same message at DSPAM_HAM_99, then subtract a substantial number of points.
