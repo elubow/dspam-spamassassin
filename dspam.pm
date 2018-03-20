@@ -197,7 +197,7 @@ sub Calculate {
     }
   }
   else {
-    $rv = 'DPSAM_ERROR';
+    $rv = 'DSPAM_ERROR';
   }
      
   # Must return either (DSPAM_HAM_XX or DSPAM_SPAM_xx)
